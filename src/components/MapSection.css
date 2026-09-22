@@ -1,0 +1,28 @@
+.map-section { padding: 32px 0; border-bottom: 1px solid var(--color-border-soft); }
+.map-section__location { font-size: 15px; margin: -8px 0 20px; }
+
+.map-section__canvas {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #EAE7E1;
+}
+.map-section__svg { width: 100%; height: 100%; display: block; }
+.map-section__pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  color: var(--color-primary);
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
+}
+
+.map-section__note {
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-ink);
+  max-width: 640px;
+}

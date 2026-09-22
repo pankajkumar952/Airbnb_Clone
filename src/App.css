@@ -1,0 +1,19 @@
+.page { padding-bottom: 32px; }
+
+.container--wide { padding-left: 80px; padding-right: 80px; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr;
+  gap: 80px;
+  align-items: start;
+  margin-top: 8px;
+}
+
+.layout__main { min-width: 0; }
+.layout__side { padding-top: 24px; }
+
+@media (max-width: 1024px) {
+  .layout { grid-template-columns: 1fr; }
+  .layout__side { display: none; }
+}

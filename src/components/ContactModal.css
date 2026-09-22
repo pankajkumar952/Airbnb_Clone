@@ -1,0 +1,48 @@
+.contact-modal { max-width: 520px; }
+
+.contact-modal__host {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.contact-modal__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.contact-modal__name { font-size: 16px; font-weight: 600; margin: 0 0 2px; }
+.contact-modal__meta { font-size: 13px; color: var(--color-ink-soft); margin: 0; }
+
+.contact-modal__form { display: flex; flex-direction: column; gap: 16px; }
+
+.contact-modal__textarea {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--color-ink);
+  resize: vertical;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+.contact-modal__textarea:focus { outline: none; border-color: var(--color-ink); }
+.contact-modal__textarea[aria-invalid="true"] { border-color: #c13515; }
+
+.contact-modal__count {
+  font-size: 12px;
+  color: var(--color-ink-soft);
+  text-align: right;
+}
+
+.contact-modal__note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--color-ink-soft);
+  line-height: 1.4;
+  padding: 12px;
+  background: var(--color-surface-muted);
+  border-radius: var(--radius-sm);
+}

@@ -1,0 +1,33 @@
+MIT License
+
+Copyright (c) 2026 Er. Pankaj Kumar
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+---
+
+Notes on third-party assets:
+- Photography used at runtime is served live from Unsplash (unsplash.com)
+  under the Unsplash License (free to use, no attribution required).
+  No images are bundled inside this repository.
+- "Airbnb" is a registered trademark of Airbnb, Inc. This project is an
+  independent, non-commercial UI fidelity exercise created for a take-home
+  assessment. It is not affiliated with, endorsed by, or sponsored by
+  Airbnb, Inc. All product/brand naming in the clone ("Stayfolio") is
+  original and used to avoid trademark confusion.

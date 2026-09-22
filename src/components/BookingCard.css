@@ -1,0 +1,182 @@
+.booking-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 24px;
+  position: sticky;
+  top: 104px;
+}
+
+.booking-card__price-row {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+.booking-card__price { font-size: 22px; font-weight: 600; }
+.booking-card__unit { font-size: 16px; margin-left: 4px; }
+.booking-card__spacer { flex: 1; }
+.booking-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+}
+.booking-card__rating a { text-decoration: underline; }
+
+.booking-card__fields {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.booking-card__dates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.booking-card__field {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px;
+  text-align: left;
+  border: none;
+  background: none;
+  width: 100%;
+}
+.booking-card__field--border-left { border-left: 1px solid var(--color-border); }
+.booking-card__field--full { width: 100%; }
+
+.booking-card__field-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-ink);
+  margin-bottom: 2px;
+}
+.booking-card__field input {
+  border: none;
+  font-size: 14px;
+  padding: 0;
+  font-family: inherit;
+  color: var(--color-ink);
+  width: 100%;
+}
+.booking-card__field input:focus { outline: none; }
+.booking-card__field-value { font-size: 14px; color: var(--color-ink); }
+
+.booking-card__guests { position: relative; }
+
+.booking-card__guests-flyout {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-flyout);
+  padding: 20px;
+  z-index: 5;
+  animation: flyout-in 0.15s ease-out;
+}
+
+.booking-card__stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.booking-card__stepper-label { font-size: 14px; font-weight: 600; margin: 0; }
+.booking-card__stepper-sub { font-size: 13px; color: var(--color-ink-soft); margin: 0; }
+
+.booking-card__stepper-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.booking-card__stepper-controls button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 16px;
+  line-height: 1;
+  color: var(--color-ink);
+}
+.booking-card__stepper-controls button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.booking-card__stepper-controls button:not(:disabled):hover { border-color: var(--color-ink); }
+.booking-card__stepper-controls span { min-width: 12px; text-align: center; font-size: 14px; }
+
+.booking-card__reserve {
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px;
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+.booking-card__reserve:hover { filter: brightness(0.92); }
+.booking-card__reserve:active { transform: scale(0.99); }
+
+.booking-card__note {
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-ink-soft);
+  margin: 16px 0 0;
+}
+
+.booking-card__breakdown {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.booking-card__line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.booking-card__line-underline { text-decoration: underline; text-decoration-color: var(--color-ink-soft); }
+
+.booking-card__total {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border-soft);
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Date input reset for native date pickers */
+.booking-card__field input[type="date"] {
+  -webkit-appearance: none;
+  border: none;
+  font-size: 14px;
+  padding: 0;
+  font-family: inherit;
+  color: var(--color-ink);
+  width: 100%;
+  background: none;
+  cursor: pointer;
+}
+.booking-card__field input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.5;
+  cursor: pointer;
+}
+.booking-card__field input[type="date"]:focus { outline: none; }
+
+.booking-card__error {
+  color: #c13515;
+  font-size: 13px;
+  margin: 4px 0 0;
+  text-align: center;
+}

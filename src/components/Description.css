@@ -1,0 +1,26 @@
+.description {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.description__body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-ink);
+  white-space: pre-line;
+}
+.description__body p { margin: 0 0 16px; }
+.description__body:not(.is-expanded) p { margin: 0; }
+
+.description__toggle {
+  margin-top: 8px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: underline;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
