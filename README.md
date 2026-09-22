@@ -1,147 +1,663 @@
-# Stayfolio — Airbnb Listing Page Clone
+# 🏡 Stayfolio — Airbnb Listing Page Clone
 
-**A pixel-fidelity clone of a modern property-listing page** — the full
-listing view, a full-screen Photo Tour, and a keyboard-navigable single-photo
-Lightbox. Built as a take-home UI fidelity exercise.
+<p align="center">
+  <strong>A pixel-fidelity vacation rental listing experience built with React + Vite.</strong>
+</p>
 
-> Designed & built by **Er. Pankaj Kumar**
-> © 2026 · MIT Licensed · desktop-first (mobile not in scope for this task)
+<p align="center">
+  <a href="https://airbnbclone-blond.vercel.app/">
+    <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Visit%20Website-black?style=for-the-badge" alt="Live Demo">
+  </a>
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React 18">
+  <img src="https://img.shields.io/badge/Vite-5+-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License">
+</p>
+
+<p align="center">
+  <strong>Designed & Built by Er. Pankaj Kumar</strong>
+</p>
+
+<p align="center">
+  © 2026 · MIT Licensed · Desktop-first UI exercise
+</p>
 
 ---
 
-## ✨ What's included
+## 🌐 Live Demo
 
-| Screen | What it does |
+### 🚀 Try the project online
+
+**Live Website:**  
+👉 https://airbnbclone-blond.vercel.app/
+
+> Explore the complete listing experience, photo gallery, photo tour, lightbox, booking card, amenities modal, reviews, host section, and keyboard-accessible overlays.
+
+---
+
+## ✨ Project Overview
+
+**Stayfolio** is a modern property-listing interface inspired by the visual language of vacation-rental platforms.
+
+The project focuses on **pixel-level UI implementation, interactive behavior, accessibility, component architecture, and responsive visual details** rather than backend functionality.
+
+It includes a complete listing experience with:
+
+- 🏠 Property information
+- 🖼️ Interactive photo gallery
+- 📸 Full-screen Photo Tour
+- 🔍 Single-photo Lightbox
+- ⭐ Ratings and reviews
+- 👤 Host information
+- 🛏️ Capacity and property details
+- 🧰 Amenities section
+- 📅 Booking card
+- 👥 Guest selector
+- 💰 Dynamic price breakdown
+- ⌨️ Keyboard navigation
+- ♿ Accessibility-focused modal behavior
+
+---
+
+## 🎯 Main Highlights
+
+| Feature | Description |
 |---|---|
-| **Listing page** | Hero photo grid, title/rating/share/save bar, host + capacity overview, expandable description, amenities grid + "show all" modal, sticky booking card with a guest stepper and live price breakdown, reviews with category rating bars, host profile, and a location section. |
-| **Photo Tour** | Full-screen overlay opened from "Show all photos" or any hero image, showing every photo in a scrollable grid. |
-| **Lightbox** | Single-photo viewer with prev/next arrows, **←/→ keyboard navigation**, a live-announced photo counter, focus trapping, and a fade/scale transition between photos. |
-
-Every overlay (Photo Tour, Lightbox, Amenities modal) shares one
-accessibility-hardened hook: focus moves in on open, Tab is trapped inside,
-**Escape closes it**, and focus returns to whatever triggered it — this is
-true keyboard parity, not just a visual match.
+| 🏡 **Listing Page** | Complete property listing experience with gallery, title, rating, host details, amenities, reviews and location |
+| 🖼️ **Photo Gallery** | Interactive hero image layout with multiple property photographs |
+| 📸 **Photo Tour** | Full-screen gallery displaying the complete collection of property images |
+| 🔍 **Lightbox** | Focused single-image viewer with previous/next navigation |
+| ⌨️ **Keyboard Navigation** | Use `←` and `→` to navigate photos |
+| ♿ **Accessible Overlays** | Focus management, focus trapping and Escape-to-close behavior |
+| 🧰 **Amenities Modal** | Expandable amenities experience with "show all" functionality |
+| 👥 **Guest Stepper** | Interactive guest quantity controls |
+| 💰 **Price Breakdown** | Live booking calculation based on selected guests |
+| ⭐ **Reviews** | Review cards and category-based rating visualization |
+| 👤 **Host Profile** | Host information and profile section |
+| 📍 **Location Section** | Property location presentation |
+| 🎨 **Design System** | Centralized design tokens for consistent spacing, typography and styling |
 
 ---
 
-## 🧱 Tech stack — and why
+## 🖥️ User Experience
 
-| Layer | Choice | Why |
+The application is structured around a realistic property-booking flow.
+
+### 1. 🏠 Listing Experience
+
+The main page contains:
+
+- Large hero image gallery
+- Property title
+- Rating information
+- Share and save actions
+- Host information
+- Guest capacity
+- Property type
+- Bedroom/bathroom information
+- Expandable description
+- Amenities preview
+- Booking card
+- Price calculation
+- Reviews
+- Host profile
+- Location information
+
+---
+
+### 2. 📸 Photo Tour
+
+Clicking **"Show all photos"** opens a full-screen photo experience.
+
+Users can:
+
+- Browse the complete image collection
+- Scroll through all property images
+- Open individual images
+- Return to the listing page
+
+---
+
+### 3. 🔍 Lightbox
+
+Individual property images can be opened in a dedicated Lightbox.
+
+Features include:
+
+- Previous image
+- Next image
+- Image counter
+- Keyboard navigation
+- Smooth transition
+- Focus management
+- Escape-to-close
+- Focus restoration
+
+Keyboard shortcuts:
+
+```text
+←   Previous photo
+→   Next photo
+ESC Close viewer
+TAB Navigate interactive controls
+```
+
+---
+
+## ♿ Accessibility
+
+Accessibility was treated as part of the interaction design rather than as an afterthought.
+
+All major overlays use a shared accessibility pattern.
+
+### Overlay behavior
+
+When an overlay opens:
+
+1. Focus moves inside the overlay.
+2. Keyboard `Tab` navigation remains inside the active dialog.
+3. `Escape` closes the overlay.
+4. Focus returns to the element that opened it.
+5. Background scrolling is controlled while the overlay is active.
+
+This behavior is implemented for:
+
+- Photo Tour
+- Lightbox
+- Amenities Modal
+
+The goal is to provide **keyboard parity**, not simply visual similarity.
+
+---
+
+## 🧱 Technology Stack
+
+| Layer | Technology | Purpose |
 |---|---|---|
-| **Framework** | React 18 + Vite | Fast dev server, zero-config build, no framework overhead for a static, client-only clone. |
-| **Styling** | Plain CSS, one file per component, tokens in `src/styles/global.css` | Pixel-fidelity work benefits from explicit control over every value — a utility framework would fight, not help, exact spacing/color matching. |
-| **State** | React `useState` only | The app has no server, no auth, no persistence requirement — Redux/Zustand would be pure overhead. |
-| **Data** | Static mock module (`src/data/listing.js`) | Keeps the assessment focused on UI fidelity rather than backend plumbing, per the task's "backend is optional" note. |
-| **Images** | Live Unsplash URLs (`images.unsplash.com`) | Free-to-use, no API key, no bundled binary assets, no copyright risk. |
-| **Icons** | Hand-written inline SVGs (`src/components/Icons.jsx`) | No icon-library dependency; every icon shares one stroke/viewBox convention. |
-| **Build/deploy** | Vite static build → any static host | The whole app is a static bundle; no server runtime needed. |
-
-No backend, database, or API keys are required to run this project.
-
----
-
-## 🚀 Run it locally
-
-**Requirements:** Node.js 18+ and npm (bundled with Node).
-
-```bash
-# 1. Unzip and enter the project
-cd airbnb-clone
-
-# 2. Install dependencies
-npm install
-
-# 3. Start the dev server
-npm run dev
-```
-
-Open the URL Vite prints (typically **http://localhost:5173**).
-
-### Other useful commands
-
-```bash
-npm run build     # production build -> dist/
-npm run preview   # serve the production build locally, to sanity-check before deploying
-```
+| ⚛️ **Frontend** | React 18 | Component-based UI development |
+| ⚡ **Build Tool** | Vite | Fast development and optimized production builds |
+| 🎨 **Styling** | Plain CSS | Precise control over layout and visual fidelity |
+| 🧠 **State** | React `useState` | Lightweight local UI state management |
+| 📦 **Data** | JavaScript mock module | Static listing, review and pricing data |
+| 🖼️ **Images** | Unsplash URLs | Property photography without bundled binary assets |
+| 🎯 **Icons** | Inline SVG | Lightweight custom icon implementation |
+| 🚀 **Deployment** | Vercel | Static production deployment |
+| 🔧 **Version Control** | Git + GitHub | Source-code management |
 
 ---
 
-## 🌐 Deploying it live
+## 💡 Why These Technologies?
 
-The app is a static Vite build, so any static host works. **Vercel** is the
-simplest for a project already shaped like this one:
+### React
 
-1. Push this folder to a **private** GitHub/GitLab repo (the task asks you
-   not to make it public).
-2. Go to [vercel.com](https://vercel.com) → **New Project** → import the repo.
-3. Framework preset: **Vite**. Build command: `npm run build`. Output
-   directory: `dist`. (Vercel usually detects these automatically.)
-4. Deploy — you'll get a `your-project.vercel.app` URL.
+React makes it easy to break the interface into reusable components such as:
 
-Alternatives that work identically for a static Vite build: **Netlify**
-(drag-and-drop the `dist/` folder, or connect the repo), **Cloudflare Pages**,
-or **GitHub Pages** (set `base` in `vite.config.js` to your repo name if using
-a project page).
+```text
+Header
+Gallery
+ListingDetails
+Amenities
+BookingCard
+Reviews
+HostProfile
+PhotoTour
+Lightbox
+Modal
+```
+
+### Vite
+
+Vite provides:
+
+- Fast development server
+- Quick hot reload
+- Simple configuration
+- Optimized production builds
+
+### Plain CSS
+
+Pixel-fidelity interfaces often require precise control over:
+
+- Spacing
+- Typography
+- Borders
+- Shadows
+- Responsive behavior
+- Animations
+- Component-specific layouts
+
+For that reason, the project uses regular CSS instead of introducing a utility-heavy styling system.
+
+### React State
+
+The project does not require a global state-management library.
+
+Local React state is sufficient for:
+
+- Guest selection
+- Modal visibility
+- Current photo
+- Booking calculations
+- Expand/collapse behavior
 
 ---
 
-## 📂 Project structure
+## 📂 Project Structure
 
-```
+```text
 airbnb-clone/
+│
 ├── src/
-│   ├── components/        # One .jsx + co-located .css per component
-│   ├── data/listing.js    # All mock content (photos, host, reviews, pricing)
-│   ├── hooks/useOverlay.js# Shared focus-trap/Escape/scroll-lock hook
-│   ├── styles/global.css  # Design tokens (color, type, spacing, radius, shadow)
-│   ├── App.jsx / App.css
+│   │
+│   ├── components/
+│   │   ├── Header/
+│   │   ├── Gallery/
+│   │   ├── ListingDetails/
+│   │   ├── Amenities/
+│   │   ├── BookingCard/
+│   │   ├── Reviews/
+│   │   ├── HostProfile/
+│   │   ├── PhotoTour/
+│   │   ├── Lightbox/
+│   │   └── Icons.jsx
+│   │
+│   ├── data/
+│   │   └── listing.js
+│   │
+│   ├── hooks/
+│   │   └── useOverlay.js
+│   │
+│   ├── styles/
+│   │   └── global.css
+│   │
+│   ├── App.jsx
+│   ├── App.css
 │   └── main.jsx
+│
 ├── architecture/
-│   ├── architecture-diagram.png / .svg
-│   └── ARCHITECTURE.md    # Written rationale per layer
-├── prompts/PROMPTS.md     # AI prompt sequence used to build this
+│   ├── architecture-diagram.png
+│   ├── architecture-diagram.svg
+│   └── ARCHITECTURE.md
+│
+├── prompts/
+│   └── PROMPTS.md
+│
 ├── .claude/
-│   ├── agents/            # Subagent configs (fidelity, a11y, code-structure review)
-│   ├── skills/            # Reusable "pixel-fidelity-review" skill
-│   └── (CLAUDE.md at repo root)
+│   ├── agents/
+│   │   ├── ui-fidelity-reviewer
+│   │   ├── a11y-auditor
+│   │   └── code-structure-reviewer
+│   │
+│   ├── skills/
+│   │   └── pixel-fidelity-review/
+│   │
+│   └── CLAUDE.md
+│
 ├── LICENSE
 └── README.md
 ```
 
 ---
 
-## 🤖 AI-assisted development
+## 🚀 Run Locally
 
-This project was built with an AI coding assistant (Claude), using:
-- A **discovery pass** to inventory every screen, interactive element, and
-  keyboard behavior before writing code (see `prompts/PROMPTS.md`).
-- Three **Claude Code subagents** (`.claude/agents/`) for repeatable
-  quality passes: `ui-fidelity-reviewer`, `a11y-auditor`, `code-structure-reviewer`.
-- A reusable **skill** (`.claude/skills/pixel-fidelity-review/`) documenting
-  the general process for cloning a real UI without lifting its code.
-- A project-level `CLAUDE.md` so any future AI session inherits the same
-  conventions (design tokens only, shared overlay hook, accessibility as a
-  requirement, no copied assets).
+### Requirements
 
-Full prompt sequence: [`prompts/PROMPTS.md`](./prompts/PROMPTS.md).
+Make sure you have:
+
+- **Node.js 18+**
+- **npm**
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <YOUR_GITHUB_REPOSITORY_URL>
+
+# Enter the project directory
+cd airbnb-clone
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+Vite will provide a local URL, normally:
+
+```text
+http://localhost:5173
+```
+
+Open it in your browser.
 
 ---
 
-## 🧭 Architecture diagram
+## 🛠️ Available Commands
 
-A production-scale architecture for a real vacation-rental marketplace
-(covering frontend, backend, storage, search, and deployment scaling) is in
-[`architecture/architecture-diagram.png`](./architecture/architecture-diagram.png),
-with the written rationale in
-[`architecture/ARCHITECTURE.md`](./architecture/ARCHITECTURE.md).
+### Development
+
+```bash
+npm run dev
+```
+
+Starts the Vite development server.
+
+### Production Build
+
+```bash
+npm run build
+```
+
+Creates the optimized production bundle inside:
+
+```text
+dist/
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+Runs the production build locally for final verification.
 
 ---
 
-## ⚖️ A note on originality & scope
+## 🌐 Deployment
 
-- No markup, CSS, class names, or assets were copied from any reference
-  clone — this was rebuilt from first principles against Airbnb's well-known
-  public visual language, using original copy and Unsplash photography.
-- "Airbnb" is a trademark of Airbnb, Inc. This is an independent,
-  non-commercial UI exercise, not affiliated with or endorsed by Airbnb.
-- Scope is intentionally **desktop-only**, per the task brief.
+The application is a static Vite application and can be deployed to modern static hosting platforms.
+
+### Vercel
+
+The current production deployment is hosted on Vercel:
+
+**Live Demo:**  
+https://airbnbclone-blond.vercel.app/
+
+Typical Vercel configuration:
+
+```text
+Framework Preset: Vite
+Build Command: npm run build
+Output Directory: dist
+```
+
+Vercel normally detects the Vite configuration automatically.
+
+### Other Hosting Options
+
+The same production build can also be deployed using:
+
+- Netlify
+- Cloudflare Pages
+- GitHub Pages
+- Any static hosting provider
+
+---
+
+## 🧠 Architecture
+
+The UI is organized around reusable React components rather than a single large page component.
+
+### High-Level Flow
+
+```text
+                    ┌──────────────────┐
+                    │   React App      │
+                    └────────┬─────────┘
+                             │
+             ┌───────────────┼────────────────┐
+             │               │                │
+             ▼               ▼                ▼
+        Listing UI       Gallery UI       Booking UI
+             │               │                │
+             │               ├────────┐       │
+             │               │        │       │
+             ▼               ▼        ▼       ▼
+        Amenities        Photo Tour  Lightbox Price State
+             │
+             ▼
+       Shared Overlay Hook
+             │
+             ▼
+    Focus / Escape / Scroll Lock
+```
+
+The project also includes a production-scale architecture document describing how a real vacation-rental platform could evolve to include:
+
+- Frontend
+- Backend APIs
+- Authentication
+- Database
+- Object storage
+- Search
+- Caching
+- Booking services
+- Payment services
+- Deployment infrastructure
+
+Architecture documentation:
+
+```text
+architecture/ARCHITECTURE.md
+```
+
+Diagram:
+
+```text
+architecture/architecture-diagram.png
+```
+
+---
+
+## 🤖 AI-Assisted Development
+
+This project was developed with assistance from **Claude Code**.
+
+AI assistance was used as part of a structured development and review workflow.
+
+### Discovery Pass
+
+Before implementation, the interface was analyzed to identify:
+
+- Screens
+- Interactive components
+- Modal behavior
+- Keyboard interactions
+- Accessibility requirements
+- Component boundaries
+- Visual patterns
+
+### Review Agents
+
+The project includes dedicated review configurations for:
+
+```text
+ui-fidelity-reviewer
+a11y-auditor
+code-structure-reviewer
+```
+
+These were used to perform repeatable reviews of:
+
+- UI fidelity
+- Accessibility
+- Component organization
+- Code structure
+
+### Reusable Skill
+
+The repository also contains a reusable:
+
+```text
+pixel-fidelity-review
+```
+
+skill documenting the process used for recreating interfaces while maintaining original implementation details.
+
+Prompt documentation:
+
+```text
+prompts/PROMPTS.md
+```
+
+---
+
+## 🎨 Design Principles
+
+The implementation follows several design principles.
+
+### 01 — Component First
+
+Large sections are broken into focused React components rather than placing the complete application inside one component.
+
+### 02 — Reusable Interaction Logic
+
+Overlay behavior is centralized through:
+
+```text
+useOverlay.js
+```
+
+This avoids duplicating focus-management and Escape-key behavior across different modals.
+
+### 03 — Explicit Design Tokens
+
+Shared visual values are maintained through the global stylesheet.
+
+This helps maintain consistency across:
+
+- Colors
+- Typography
+- Spacing
+- Border radius
+- Shadows
+
+### 04 — Accessibility by Design
+
+Keyboard navigation and focus behavior are implemented alongside the visual UI.
+
+### 05 — No Unnecessary Dependencies
+
+The project intentionally avoids large UI or state-management libraries where they do not provide meaningful value.
+
+---
+
+## 📊 Project Scope
+
+This project is intentionally focused on **frontend UI fidelity**.
+
+### Included
+
+- Listing interface
+- Gallery
+- Photo Tour
+- Lightbox
+- Amenities
+- Booking UI
+- Guest stepper
+- Price calculation
+- Reviews
+- Host profile
+- Location section
+- Keyboard navigation
+- Accessibility behavior
+
+### Not Included
+
+- Real user authentication
+- Real property database
+- Real booking system
+- Payment processing
+- Backend APIs
+- Persistent reservations
+- Real-time availability
+- Production marketplace infrastructure
+
+The architecture documentation demonstrates how these capabilities could be added in a production-scale implementation.
+
+---
+
+## ⚖️ Originality & Scope
+
+This project is an independent frontend UI exercise.
+
+- No markup, CSS, class names, or implementation code was copied from an existing clone.
+- The interface was rebuilt from first principles using the publicly recognizable visual language of vacation-rental listing platforms.
+- Property content is represented using original/mock data.
+- Photography is loaded from Unsplash URLs.
+- Airbnb is a trademark of Airbnb, Inc.
+- This project is **not affiliated with, sponsored by, or endorsed by Airbnb, Inc.**
+- The project is intended as a non-commercial UI/engineering exercise.
+- The implementation is desktop-first, according to the original task scope.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+See the:
+
+```text
+LICENSE
+```
+
+file for the complete license text.
+
+---
+
+## 👨‍💻 About the Developer
+
+### Er. Pankaj Kumar
+
+**Software Developer | Full Stack Developer | AI/ML Enthusiast**
+
+I build modern web applications with a focus on:
+
+- Java
+- Spring Boot
+- Python
+- FastAPI
+- React.js
+- JavaScript
+- TypeScript
+- SQL
+- REST APIs
+- AI/ML
+- Generative AI
+- Full Stack Development
+
+---
+
+## 🔗 Connect & Explore
+
+<p align="center">
+
+<a href="https://github.com/pankajkumar952">
+  <img src="https://img.shields.io/badge/GitHub-Pankaj%20Kumar-181717?style=for-the-badge&logo=github" alt="GitHub">
+</a>
+
+<a href="https://www.linkedin.com/in/pankaj-kumar-0b82a8238/">
+  <img src="https://img.shields.io/badge/LinkedIn-Pankaj%20Kumar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+</a>
+
+<a href="https://airbnbclone-blond.vercel.app/">
+  <img src="https://img.shields.io/badge/Live%20Project-Stayfolio-black?style=for-the-badge&logo=vercel" alt="Live Project">
+</a>
+
+</p>
+
+---
+
+<p align="center">
+
+<strong>⭐ If you find this project interesting, consider giving the repository a star!</strong>
+
+<br><br>
+
+Built with ❤️ and React by <strong>Er. Pankaj Kumar</strong>
+
+</p>
