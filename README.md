@@ -273,24 +273,6 @@ airbnb-clone/
 │   ├── App.css
 │   └── main.jsx
 │
-├── architecture/
-│   ├── architecture-diagram.png
-│   ├── architecture-diagram.svg
-│   └── ARCHITECTURE.md
-│
-├── prompts/
-│   └── PROMPTS.md
-│
-├── .claude/
-│   ├── agents/
-│   │   ├── ui-fidelity-reviewer
-│   │   ├── a11y-auditor
-│   │   └── code-structure-reviewer
-│   │
-│   ├── skills/
-│   │   └── pixel-fidelity-review/
-│   │
-│   └── CLAUDE.md
 │
 ├── LICENSE
 └── README.md
